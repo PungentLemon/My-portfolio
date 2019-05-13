@@ -1,5 +1,6 @@
 
 <!doctype html>
+{% load staticfiles %}
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -35,7 +36,7 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Art</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Art</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,13 +44,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="#">Twitter </a>
+            <a class="nav-link" href="https://twitter.com/login">Twitter </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href="{% static 'Resume.pdf' %}">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
           </li>
         </ul>
       </div>
@@ -64,7 +65,8 @@
         <p class="lead text-muted">I love making websitews with django</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Email Me</a>
-
+          <br>
+          <img src="{% static 'me.jpg' %}" height="300">
         </p>
       </div>
     </section>
